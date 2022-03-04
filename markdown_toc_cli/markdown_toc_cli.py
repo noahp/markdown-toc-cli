@@ -12,7 +12,7 @@ from typing import Sequence
 
 import mistletoe
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 COMMENT_PREFIX = "<!-- markdown-toc-cli"
 
