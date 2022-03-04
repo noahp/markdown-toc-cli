@@ -1,0 +1,11 @@
+- id: markdown-toc-cli
+  name: markdown-toc-cli
+  description: "Markdown table-of-contents generator"
+  entry: markdown-toc-cli
+  language: python
+  # This is to support a use case where pre-commit runs in Python 2.
+  # Should eventually be removed, at latest when `minimum_pre_commit_version`
+  # is set to 2.0.0.
+  language_version: python3
+  types: [markdown]
+  minimum_pre_commit_version: '1.0.0'

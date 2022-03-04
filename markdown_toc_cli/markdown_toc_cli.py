@@ -65,15 +65,14 @@ class Heading:
 
 def render_toc(headings, prefix, indentation, minlevel, maxlevel):
     """generate a table of contents from a list of headings"""
-    return "\n".join(
-        filter(
-            None,
-            [
-                heading.toc_entry(prefix, indentation, minlevel, maxlevel)
-                for heading in headings
-            ],
-        )
+    toc_lines = filter(
+        None,
+        [
+            heading.toc_entry(prefix, indentation, minlevel, maxlevel)
+            for heading in headings
+        ],
     )
+    return list([f"{x}\n" for x in toc_lines])
 
 
 def insert_toc(filename, toc):
@@ -86,17 +85,23 @@ def insert_toc(filename, toc):
         (i for i, v in enumerate(lines) if v.startswith(COMMENT_PREFIX)), None
     )
     toc_end = next(
-        (i for i, v in enumerate(lines) if v.startswith(f"{COMMENT_PREFIX}-end")), None
+        (i for i, v in enumerate(lines) if v.startswith(f"{COMMENT_PREFIX}-end")),
+        toc_start,
     )
 
     if not toc_start:
         return
 
-    if not toc_end:
-        toc += f"\n\n{COMMENT_PREFIX}-end -->"
-        toc_end = toc_start + 1
+    toc_end_comment = f"{COMMENT_PREFIX}-end -->\n"
 
-    lines_out = lines[: toc_start + 1] + ["\n"] + [toc] + ["\n\n"] + lines[toc_end:]
+    lines_out = (
+        lines[: toc_start + 1]
+        + ["\n"]
+        + toc
+        + ["\n"]
+        + [toc_end_comment]
+        + lines[toc_end + 1:]
+    )
 
     with open(filename, "w", encoding="utf-8") as outfile:
         outfile.write("".join(lines_out))
@@ -137,6 +142,7 @@ def get_args(filename):
             if line.startswith(COMMENT_PREFIX):
                 # update with any settings
                 args.update(parse_comment_args(line))
+                break
 
     args["minlevel"] = int(args["minlevel"])
     args["maxlevel"] = int(args["maxlevel"])
@@ -164,9 +170,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     for filename in args.FILENAMES:
-
         comment_args = get_args(filename)
         generate_toc(filename, **comment_args)
+
     return 0
 
 
