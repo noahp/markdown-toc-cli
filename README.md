@@ -1,4 +1,4 @@
-[![GitHub](https://img.shields.io/badge/GitHub-noahp/markdown-toc-py-8da0cb?style=for-the-badge&logo=github)](https://github.com/noahp/markdown-toc-py)
+[![GitHub](https://img.shields.io/badge/GitHub-noahp/markdown--toc--py-8da0cb?style=for-the-badge&logo=github)](https://github.com/noahp/markdown-toc-py)
 [![PyPI
 version](https://img.shields.io/pypi/v/markdown-toc-py.svg?style=for-the-badge&logo=PyPi&logoColor=white)](https://pypi.org/project/markdown-toc-py/)
 [![PyPI
