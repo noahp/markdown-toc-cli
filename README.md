@@ -3,7 +3,7 @@
 version](https://img.shields.io/pypi/v/markdown-toc-cli.svg?style=for-the-badge&logo=PyPi&logoColor=white)](https://pypi.org/project/markdown-toc-cli/)
 [![PyPI
 pyversions](https://img.shields.io/pypi/pyversions/markdown-toc-cli.svg?style=for-the-badge&logo=python&logoColor=white&color=ff69b4)](https://pypi.python.org/pypi/markdown-toc-cli/)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/noahp/markdown-toc-cli/main-ci/master?logo=github-actions&logoColor=white&style=for-the-badge)](https://github.com/noahp/markdown-toc-cli/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/noahp/markdown-toc-cli/main-ci/main?logo=github-actions&logoColor=white&style=for-the-badge)](https://github.com/noahp/markdown-toc-cli/actions)
 
 <!-- markdown-toc-cli -->
 
