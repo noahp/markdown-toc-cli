@@ -24,6 +24,16 @@ https://github.com/hukkin/mdformat-toc
 I'd recommend using that _unless_ you don't want to run the built-in `mdformat`
 formatting. Then this tool might be suitable for a standalone version.
 
+(For example, `prettier` formats Markdown tables to be readable when not
+rendered as HTML, where `mdformat` will sometimes reflow them into a difficult-to-read
+packed representation).
+
+To use `mdformat-toc` via `mdformat` in a pre-commit hook, see here:
+
+https://mdformat.readthedocs.io/en/stable/users/installation_and_usage.html#usage-as-a-pre-commit-hook
+
+And add `mdformat-toc` as an `additional_dependencies:` for `mdformat`.
+
 ## Installation
 
 ```bash
