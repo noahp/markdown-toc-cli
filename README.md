@@ -55,5 +55,5 @@ Example usage of this as a pre-commit hook:
 - repo: https://github.com/noahp/markdown-toc-cli
   rev: 0.1.1
   hooks:
-  - id: markdown-toc-cli
+    - id: markdown-toc-cli
 ```

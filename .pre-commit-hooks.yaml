@@ -8,4 +8,4 @@
   # is set to 2.0.0.
   language_version: python3
   types: [markdown]
-  minimum_pre_commit_version: '1.0.0'
+  minimum_pre_commit_version: "1.0.0"

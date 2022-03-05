@@ -100,7 +100,7 @@ def insert_toc(filename, toc):
         + toc
         + ["\n"]
         + [toc_end_comment]
-        + lines[toc_end + 1:]
+        + lines[toc_end + 1 :]
     )
 
     with open(filename, "w", encoding="utf-8") as outfile:
